@@ -3,9 +3,11 @@ package Order
 import FoodItem "FoodManagement/Entities"
 
 type Order struct {
-	FoodRequest []struct {
-		Item     *FoodItem.Fooditem
-		Quantity int
-	}
-	TotalPrice float64
+	FoodRequest []*OrderItem
+	TotalPrice  float64
+}
+
+type OrderItem struct {
+	Item     *FoodItem.Fooditem
+	Quantity int
 }
