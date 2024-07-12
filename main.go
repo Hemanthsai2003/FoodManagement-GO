@@ -7,6 +7,9 @@ import (
 )
 
 func main() {
+
+	Itemname, Itemquantity := Ordercontroller.Inp()
+
 	dosa := FoodItemController.Newfooditem("dosa", 50.55, 500)
 	idly := FoodItemController.Newfooditem("idly", 30.25, 200)
 
@@ -16,5 +19,6 @@ func main() {
 	orderTemp := &Order.OrderItem{Item: &dosa.Item, Quantity: 1}
 	orderTemp1 := &Order.OrderItem{Item: &idly.Item, Quantity: 10}
 	order1 := Ordercontroller.Neworder([]*Order.OrderItem{orderTemp, orderTemp1})
-	order1.PrintTotalPrice()
+	order1.PrintTotalPrice(Itemname, Itemquantity)
+
 }
